@@ -77,7 +77,7 @@ function Chat() {
         }
 
         const response = await fetch(
-          `http://localhost:5001/api/users/${userId}`,
+          `https://lets-go-backend-p4ox.onrender.com/api/users/${userId}`,
           {
             method: "GET",
             headers: {
@@ -136,7 +136,7 @@ function Chat() {
       setError("");
 
       const response = await fetch(
-        `http://localhost:5001/api/messages/${userId}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/messages/${userId}`,
         {
           method: "GET",
           headers: {
@@ -205,7 +205,7 @@ function Chat() {
       if (!token) return;
 
       await fetch(
-        `http://localhost:5001/api/messages/${userId}/read`,
+        `https://lets-go-backend-p4ox.onrender.com/api/messages/${userId}/read`,
         {
           method: "PUT",
           headers: {
@@ -251,7 +251,7 @@ function Chat() {
       currentUserId
     );
 
-    const socket = io("http://localhost:5001", {
+    const socket = io("https://lets-go-backend-p4ox.onrender.com", {
       transports: ["websocket", "polling"],
     });
 
@@ -446,7 +446,7 @@ function Chat() {
       const messageText = text.trim();
 
       const response = await fetch(
-        `http://localhost:5001/api/messages/${userId}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/messages/${userId}`,
         {
           method: "POST",
 

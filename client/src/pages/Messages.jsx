@@ -62,7 +62,7 @@ function Messages() {
         }
 
         const response = await fetch(
-          "http://localhost:5001/api/messages/conversations",
+          "https://lets-go-backend-p4ox.onrender.com/api/messages/conversations",
           {
             method: "GET",
             headers: {

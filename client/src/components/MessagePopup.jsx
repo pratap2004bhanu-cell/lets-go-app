@@ -76,7 +76,7 @@ function MessagePopup() {
       currentUserId
     );
 
-    const socket = io("http://localhost:5001", {
+    const socket = io("https://lets-go-backend-p4ox.onrender.com", {
       transports: ["websocket", "polling"],
     });
 

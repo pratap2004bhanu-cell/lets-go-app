@@ -117,7 +117,7 @@ function ActivityChat() {
 
         const response =
           await fetch(
-            `http://localhost:5001/api/activity-messages/${id}?_=${Date.now()}`,
+            `https://lets-go-backend-p4ox.onrender.com/api/activity-messages/${id}?_=${Date.now()}`,
             {
               method: "GET",
               cache: "no-store",
@@ -223,7 +223,7 @@ function ActivityChat() {
 
     const socket =
       io(
-        "http://localhost:5001",
+        "https://lets-go-backend-p4ox.onrender.com",
         {
           transports: [
             "websocket",
@@ -420,7 +420,7 @@ if (currentUserId) {
 
         const response =
           await fetch(
-            `http://localhost:5001/api/activity-messages/${id}`,
+            `https://lets-go-backend-p4ox.onrender.com/api/activity-messages/${id}`,
             {
               method: "POST",
 

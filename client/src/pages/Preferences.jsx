@@ -56,7 +56,7 @@ function Preferences() {
         setError("");
 
         const response = await fetch(
-          "http://localhost:5001/api/users/preferences",
+          "https://lets-go-backend-p4ox.onrender.com/api/users/preferences",
           {
             method: "GET",
             headers: {
@@ -248,7 +248,7 @@ function Preferences() {
       setSaving(true);
 
       const response = await fetch(
-        "http://localhost:5001/api/users/preferences",
+        "https://lets-go-backend-p4ox.onrender.com/api/users/preferences",
         {
           method: "PUT",
           headers: {

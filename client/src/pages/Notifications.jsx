@@ -78,7 +78,7 @@ function Notifications() {
       }
 
       const response = await fetch(
-        "http://localhost:5001/api/notifications",
+        "https://lets-go-backend-p4ox.onrender.com/api/notifications",
         {
           method: "GET",
 
@@ -175,7 +175,7 @@ function Notifications() {
 
       const response =
         await fetch(
-          `http://localhost:5001/api/notifications/${notificationId}/read`,
+          `https://lets-go-backend-p4ox.onrender.com/api/notifications/${notificationId}/read`,
           {
             method: "PUT",
 
@@ -261,7 +261,7 @@ function Notifications() {
 
       const response =
         await fetch(
-          "http://localhost:5001/api/notifications/read-all",
+          "https://lets-go-backend-p4ox.onrender.com/api/notifications/read-all",
           {
             method: "PUT",
 

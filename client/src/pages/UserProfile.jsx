@@ -109,7 +109,7 @@ function UserProfile() {
         // ========================================
 
         const response = await fetch(
-          `http://localhost:5001/api/users/${id}`
+          `https://lets-go-backend-p4ox.onrender.com/api/users/${id}`
         );
 
         const data = await response.json();
@@ -135,7 +135,7 @@ function UserProfile() {
 
           const activitiesResponse =
             await fetch(
-              "http://localhost:5001/api/activities"
+              "https://lets-go-backend-p4ox.onrender.com/api/activities"
             );
 
           const activitiesData =
@@ -232,7 +232,7 @@ function UserProfile() {
         try {
           const connectionsResponse =
             await fetch(
-              "http://localhost:5001/api/connections",
+              "https://lets-go-backend-p4ox.onrender.com/api/connections",
               {
                 headers: {
                   Authorization:
@@ -297,7 +297,7 @@ function UserProfile() {
         try {
           const sentResponse =
             await fetch(
-              "http://localhost:5001/api/connections/sent",
+              "https://lets-go-backend-p4ox.onrender.com/api/connections/sent",
               {
                 headers: {
                   Authorization:
@@ -466,7 +466,7 @@ function UserProfile() {
 
       const response =
         await fetch(
-          "http://localhost:5001/api/connections/send",
+          "https://lets-go-backend-p4ox.onrender.com/api/connections/send",
           {
             method: "POST",
 

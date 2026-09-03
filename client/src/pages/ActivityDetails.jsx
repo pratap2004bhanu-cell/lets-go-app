@@ -247,7 +247,7 @@ if (!id) {
         // ------------------------------------
 
         const response = await fetch(
-          `http://localhost:5001/api/activities/${id}?_=${Date.now()}`,
+          `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}?_=${Date.now()}`,
           {
             cache: "no-store",
             headers: {
@@ -284,7 +284,7 @@ if (!id) {
         // ------------------------------------
 
         const profileResponse = await fetch(
-          "http://localhost:5001/api/users/profile",
+          "https://lets-go-backend-p4ox.onrender.com/api/users/profile",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -436,7 +436,7 @@ const fetchConnections = async () => {
     setConnectionsLoading(true);
 
     const response = await fetch(
-      "http://localhost:5001/api/connections",
+      "https://lets-go-backend-p4ox.onrender.com/api/connections",
       {
         method: "GET",
 
@@ -530,7 +530,7 @@ const handleInviteUser = async (
     setError("");
 
     const response = await fetch(
-      `http://localhost:5001/api/activities/${id}/invite`,
+      `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/invite`,
       {
         method: "POST",
 
@@ -634,7 +634,7 @@ const handleInviteUser = async (
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/request-join`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/request-join`,
         {
           method: "POST",
           headers: {
@@ -699,7 +699,7 @@ const handleInviteUser = async (
       setRequestsLoading(true);
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/join-requests?_=${Date.now()}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/join-requests?_=${Date.now()}`,
         {
           cache: "no-store",
           headers: {
@@ -769,7 +769,7 @@ const handleInviteUser = async (
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/join-requests/${userId}/accept`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/join-requests/${userId}/accept`,
         {
           method: "POST",
           headers: {
@@ -829,7 +829,7 @@ const handleInviteUser = async (
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/join-requests/${userId}/reject`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/join-requests/${userId}/reject`,
         {
           method: "POST",
           headers: {
@@ -885,7 +885,7 @@ const handleRemoveMember = async (userId) => {
     setSuccess("");
 
     const response = await fetch(
-      `http://localhost:5001/api/activities/${id}/members/${userId}`,
+      `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/members/${userId}`,
       {
         method: "DELETE",
         headers: {
@@ -946,7 +946,7 @@ const handleRemoveMember = async (userId) => {
       setSuccess("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/leave`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/leave`,
         {
           method: "DELETE",
           headers: {
@@ -979,7 +979,7 @@ const handleRemoveMember = async (userId) => {
       // Refresh activity
       const refreshed =
         await fetch(
-          `http://localhost:5001/api/activities/${id}`,
+          `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -1034,7 +1034,7 @@ const handleRemoveMember = async (userId) => {
       setError("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}`,
         {
           method: "DELETE",
           headers: {
@@ -1105,7 +1105,7 @@ const handleReport = async () => {
         : reportReason;
 
     const response = await fetch(
-      `http://localhost:5001/api/activities/${id}/report`,
+      `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/report`,
       {
         method: "POST",
         headers: {
@@ -1174,7 +1174,7 @@ const fetchAttendance = async () => {
     setAttendanceLoading(true);
 
     const response = await fetch(
-      `http://localhost:5001/api/activities/${id}/attendance`,
+      `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/attendance`,
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -1239,7 +1239,7 @@ const handleConfirmAttendance = async () => {
     setSuccess("");
 
     const response = await fetch(
-      `http://localhost:5001/api/activities/${id}/attendance`,
+      `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/attendance`,
       {
         method: "POST",
         headers: {
@@ -1297,7 +1297,7 @@ const handleConfirmAttendance = async () => {
       setMemoriesLoading(true);
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/memories?_=${Date.now()}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/memories?_=${Date.now()}`,
         {
           cache: "no-store",
           headers: {
@@ -1520,7 +1520,7 @@ const handleConfirmAttendance = async () => {
       formData.append("caption", memoryCaption.trim());
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}/memories`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}/memories`,
         {
           method: "POST",
           headers: {
@@ -1776,7 +1776,7 @@ const fetchRatings = async () => {
     setRatingLoading(true);
 
     const response = await fetch(
-      `http://localhost:5001/api/ratings/${id}`
+      `https://lets-go-backend-p4ox.onrender.com/api/ratings/${id}`
     );
 
     const data = await response.json();
@@ -1825,7 +1825,7 @@ const fetchMyRating = async () => {
     if (!token) return;
 
     const response = await fetch(
-      `http://localhost:5001/api/ratings/${id}/my-rating`,
+      `https://lets-go-backend-p4ox.onrender.com/api/ratings/${id}/my-rating`,
       {
         headers: {
           Authorization:
@@ -1899,7 +1899,7 @@ const handleSubmitRating = async () => {
     setRatingMessage("");
 
     const response = await fetch(
-      `http://localhost:5001/api/ratings/${id}`,
+      `https://lets-go-backend-p4ox.onrender.com/api/ratings/${id}`,
       {
         method: "POST",
         headers: {
@@ -1958,7 +1958,7 @@ useEffect(() => {
 
   if (!token) return;
 
-  const socket = io("http://localhost:5001", {
+  const socket = io("https://lets-go-backend-p4ox.onrender.com", {
     auth: {
       token,
     },

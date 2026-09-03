@@ -132,7 +132,7 @@ function EditActivity() {
         // ----------------------------------------
 
         const response = await fetch(
-          `http://localhost:5001/api/activities/${id}`,
+          `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -351,7 +351,7 @@ function EditActivity() {
       setError("");
 
       const response = await fetch(
-        `http://localhost:5001/api/activities/${id}`,
+        `https://lets-go-backend-p4ox.onrender.com/api/activities/${id}`,
         {
           method: "PUT",
 

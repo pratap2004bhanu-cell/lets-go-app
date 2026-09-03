@@ -81,7 +81,7 @@ function Connections() {
 
       const requestsResponse =
         await fetch(
-          "http://localhost:5001/api/connections/requests",
+          "https://lets-go-backend-p4ox.onrender.com/api/connections/requests",
           {
             headers: {
               Authorization:
@@ -119,7 +119,7 @@ function Connections() {
 
       const connectionsResponse =
         await fetch(
-          "http://localhost:5001/api/connections",
+          "https://lets-go-backend-p4ox.onrender.com/api/connections",
           {
             headers: {
               Authorization:
@@ -218,7 +218,7 @@ function Connections() {
 
       const response =
         await fetch(
-          `http://localhost:5001/api/connections/${connectionId}/accept`,
+          `https://lets-go-backend-p4ox.onrender.com/api/connections/${connectionId}/accept`,
           {
             method: "PUT",
             headers: {
@@ -298,7 +298,7 @@ function Connections() {
 
       const response =
         await fetch(
-          `http://localhost:5001/api/connections/${connectionId}/reject`,
+          `https://lets-go-backend-p4ox.onrender.com/api/connections/${connectionId}/reject`,
           {
             method: "PUT",
             headers: {
