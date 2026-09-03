@@ -15,7 +15,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Discover from "./pages/Discover.jsx";
 import CreateActivity from "./pages/CreateActivity.jsx";
-import Profile from "./Pages/Profile.jsx";
+import Profile from "./pages/Profile.jsx";
 import ActivityDetails from "./pages/ActivityDetails.jsx";
 import Chat from "./pages/Chat.jsx";
 import Messages from "./pages/Messages.jsx";
