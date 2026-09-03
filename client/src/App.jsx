@@ -7,14 +7,14 @@ import ActivityChat from "./pages/ActivityChat";
 
 import "./App.css";
 
-import Navbar from "./Components/Navbar.jsx";
+import Navbar from "./components/Navbar.jsx";
 import Preferences from "./pages/Preferences.jsx";
 
-import Home from "./Pages/Home.jsx";
-import Login from "./Pages/Login.jsx";
-import Register from "./Pages/Register.jsx";
-import Discover from "./Pages/Discover.jsx";
-import CreateActivity from "./Pages/CreateActivity.jsx";
+import Home from "./pages/Home.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Discover from "./pages/Discover.jsx";
+import CreateActivity from "./pages/CreateActivity.jsx";
 import Profile from "./Pages/Profile.jsx";
 import ActivityDetails from "./pages/ActivityDetails.jsx";
 import Chat from "./pages/Chat.jsx";
