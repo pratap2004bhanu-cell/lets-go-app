@@ -1,0 +1,658 @@
+/* ========================================
+   MESSAGE POPUP
+======================================== */
+
+.message-popup {
+  position: fixed;
+
+  right: 28px;
+  bottom: 28px;
+
+  width: 390px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 20, 48, 0.98),
+      rgba(8, 14, 30, 0.99)
+    );
+
+  border: 1px solid rgba(124, 58, 237, 0.45);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.55),
+    0 0 45px rgba(99, 102, 241, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  backdrop-filter: blur(22px);
+
+  cursor: pointer;
+
+  z-index: 99999;
+
+  animation:
+    messagePopupIn
+    0.45s
+    cubic-bezier(0.16, 1, 0.3, 1)
+    forwards;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* ========================================
+   HOVER
+======================================== */
+
+.message-popup:hover {
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.6),
+    0 0 55px rgba(99, 102, 241, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ========================================
+   TOP ACCENT
+======================================== */
+
+.message-popup-accent {
+  width: 100%;
+  height: 3px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #6366f1,
+      #06b6d4
+    );
+
+  box-shadow:
+    0 0 18px rgba(124, 58, 237, 0.8);
+}
+
+/* ========================================
+   ANIMATION
+======================================== */
+
+@keyframes messagePopupIn {
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(35px)
+      scale(0.94);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0)
+      scale(1);
+  }
+}
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.message-popup-close {
+  position: absolute;
+
+  top: 16px;
+  right: 16px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  color: #9ca7bd;
+
+  font-size: 20px;
+
+  line-height: 1;
+
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.message-popup-close:hover {
+  background:
+    rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  transform: rotate(90deg);
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.message-popup-header {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding:
+    20px
+    20px
+    16px;
+
+  position: relative;
+}
+
+/* ========================================
+   HEADER ICON
+======================================== */
+
+.message-popup-header-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.95),
+      rgba(37, 99, 235, 0.95)
+    );
+
+  box-shadow:
+    0 8px 25px
+      rgba(124, 58, 237, 0.35),
+    inset 0 1px 0
+      rgba(255, 255, 255, 0.2);
+}
+
+.message-popup-header-icon span {
+  font-size: 22px;
+
+  filter:
+    drop-shadow(
+      0 3px 8px
+      rgba(0, 0, 0, 0.25)
+    );
+}
+
+/* ========================================
+   HEADER TEXT
+======================================== */
+
+.message-popup-header-text {
+  min-width: 0;
+
+  flex: 1;
+}
+
+.message-popup-label {
+  display: block;
+
+  margin-bottom: 4px;
+
+  color: #a78bfa;
+
+  font-size: 9px;
+
+  font-weight: 900;
+
+  letter-spacing: 1.7px;
+}
+
+.message-popup-header-text h3 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  font-weight: 750;
+
+  letter-spacing: -0.2px;
+}
+
+/* ========================================
+   LIVE INDICATOR
+======================================== */
+
+.message-popup-live {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  margin-right: 32px;
+
+  color: #5eead4;
+
+  font-size: 8px;
+
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.message-popup-live span {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #2dd4bf;
+
+  box-shadow:
+    0 0 10px
+    rgba(45, 212, 191, 0.8);
+
+  animation:
+    popupPulse
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes popupPulse {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+}
+
+/* ========================================
+   MESSAGE CARD
+======================================== */
+
+.message-popup-message {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  margin:
+    0
+    18px;
+
+  padding: 14px;
+
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.055),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid
+    rgba(255, 255, 255, 0.075);
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.message-popup:hover
+.message-popup-message {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(124, 58, 237, 0.12),
+      rgba(6, 182, 212, 0.05)
+    );
+
+  border-color:
+    rgba(124, 58, 237, 0.22);
+}
+
+/* ========================================
+   AVATAR
+======================================== */
+
+.message-popup-avatar-wrapper {
+  position: relative;
+
+  flex-shrink: 0;
+}
+
+.message-popup-avatar {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #2563eb
+    );
+
+  border: 2px solid
+    rgba(255, 255, 255, 0.12);
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  font-weight: 800;
+
+  box-shadow:
+    0 8px 25px
+    rgba(79, 70, 229, 0.35);
+}
+
+/* ========================================
+   ONLINE DOT
+======================================== */
+
+.message-popup-online {
+  position: absolute;
+
+  right: 0;
+  bottom: 1px;
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  border: 3px solid
+    #0c1225;
+
+  box-shadow:
+    0 0 10px
+    rgba(34, 197, 94, 0.6);
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.message-popup-content {
+  min-width: 0;
+
+  flex: 1;
+}
+
+/* ========================================
+   NAME ROW
+======================================== */
+
+.message-popup-name-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-bottom: 5px;
+}
+
+.message-popup-content strong {
+  display: block;
+
+  overflow: hidden;
+
+  color: #ffffff;
+
+  font-size: 14px;
+
+  font-weight: 750;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.message-popup-time {
+  flex-shrink: 0;
+
+  color: #68738b;
+
+  font-size: 10px;
+
+  font-weight: 600;
+}
+
+/* ========================================
+   MESSAGE TEXT
+======================================== */
+
+.message-popup-content p {
+  margin: 0;
+
+  overflow: hidden;
+
+  color: #9ca7bd;
+
+  font-size: 12.5px;
+
+  line-height: 1.45;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.message-popup-footer {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin:
+    0
+    18px;
+
+  padding:
+    13px
+    2px
+    0;
+
+  border-top: 1px solid
+    rgba(255, 255, 255, 0.07);
+}
+
+/* ========================================
+   OPEN TEXT
+======================================== */
+
+.message-popup-open-text {
+  color: #a78bfa;
+
+  font-size: 11px;
+
+  font-weight: 750;
+
+  letter-spacing: 0.2px;
+
+  transition:
+    color 0.2s ease;
+}
+
+.message-popup:hover
+.message-popup-open-text {
+  color: #c4b5fd;
+}
+
+/* ========================================
+   ARROW
+======================================== */
+
+.message-popup-arrow {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #7c3aed,
+      #06b6d4
+    );
+
+  color: #ffffff;
+
+  font-size: 17px;
+
+  box-shadow:
+    0 7px 20px
+    rgba(99, 102, 241, 0.28);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.message-popup:hover
+.message-popup-arrow {
+  transform:
+    translateX(4px);
+
+  box-shadow:
+    0 8px 25px
+    rgba(6, 182, 212, 0.35);
+}
+
+/* ========================================
+   PROGRESS BAR
+======================================== */
+
+.message-popup-progress {
+  width: 100%;
+  height: 2px;
+
+  background:
+    rgba(255, 255, 255, 0.04);
+}
+
+.message-popup-progress span {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  transform-origin: left;
+
+  background:
+    linear-gradient(
+      90deg,
+      #7c3aed,
+      #06b6d4
+    );
+
+  animation:
+    messagePopupProgress
+    7s
+    linear
+    forwards;
+}
+
+@keyframes messagePopupProgress {
+  from {
+    transform: scaleX(1);
+  }
+
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+  .message-popup {
+    right: 14px;
+    left: 14px;
+    bottom: 14px;
+
+    width: auto;
+
+    border-radius: 19px;
+  }
+
+  .message-popup-header {
+    padding: 17px 16px 14px;
+  }
+
+  .message-popup-message {
+    margin:
+      0
+      14px;
+
+    padding: 12px;
+  }
+
+  .message-popup-footer {
+    margin:
+      0
+      14px;
+
+    padding-top: 12px;
+  }
+
+  .message-popup-live {
+    display: none;
+  }
+}
