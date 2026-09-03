@@ -44,7 +44,7 @@ function Register() {
 
       // Send registration data to backend
       const response = await fetch(
-        "http://localhost:5001/api/auth/register",
+        "https://lets-go-backend-p4ox.onrender.com/api/auth/register",
         {
           method: "POST",
           headers: {
